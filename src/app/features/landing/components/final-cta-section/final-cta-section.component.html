@@ -1,0 +1,28 @@
+<section [id]="sectionId" class="px-4 pt-16 md:px-6 md:pt-24">
+  <div appRevealOnView class="section-shell">
+    <div
+      class="overflow-hidden rounded-[2rem] border border-[rgba(121,236,255,0.14)] bg-linear-to-br from-[rgba(255,91,77,0.16)] via-[rgba(17,19,28,0.96)] to-[rgba(121,236,255,0.14)] px-6 py-8 shadow-[var(--shadow-soft)] md:px-10 md:py-10"
+    >
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div class="max-w-2xl">
+          <span class="eyebrow">Conversão direta</span>
+          <h2
+            class="text-balance-pretty mt-5 font-[var(--font-display)] text-3xl font-semibold tracking-tight text-white md:text-4xl"
+          >
+            {{ cta.title }}
+          </h2>
+          <p class="mt-4 max-w-xl text-base leading-7 text-[var(--color-text-muted)] md:text-lg">
+            {{ cta.description }}
+          </p>
+        </div>
+
+        <app-whatsapp-button
+          [label]="cta.label"
+          contextTag="uma entrega urgente"
+          size="lg"
+          ariaLabel="Abrir conversa imediata com a NP Express no WhatsApp"
+        />
+      </div>
+    </div>
+  </div>
+</section>

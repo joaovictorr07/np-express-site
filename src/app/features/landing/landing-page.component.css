@@ -1,0 +1,16 @@
+.landing-shell {
+  position: relative;
+}
+
+.landing-shell::before {
+  position: absolute;
+  inset: 6rem 0 auto;
+  z-index: -1;
+  height: 18rem;
+  background:
+    linear-gradient(90deg, transparent, rgba(121, 236, 255, 0.18), transparent),
+    linear-gradient(90deg, transparent, rgba(255, 91, 77, 0.08), transparent);
+  opacity: 0.45;
+  filter: blur(36px);
+  content: '';
+}
