@@ -9,4 +9,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class FeatureCardComponent {
   readonly title = input.required<string>();
   readonly description = input.required<string>();
+  readonly icon = input('operation');
 }

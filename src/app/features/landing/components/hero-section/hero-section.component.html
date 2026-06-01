@@ -1,19 +1,19 @@
 <section [id]="sectionId" class="px-4 pt-8 md:px-6 md:pt-10">
-  <div class="section-shell grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-    <div appRevealOnView class="max-w-2xl">
+  <div class="section-shell hero-background surface-panel flex items-center px-6 py-14 md:px-10 md:py-20">
+    <div appRevealOnView class="mx-auto max-w-3xl text-center">
       <span class="eyebrow">{{ hero.eyebrow }}</span>
 
       <h1
-        class="text-balance-pretty mt-6 font-[var(--font-display)] text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-6xl"
+        class="text-balance-pretty mx-auto mt-6 max-w-[18rem] font-[var(--font-display)] text-3xl font-semibold tracking-tight text-white sm:max-w-none sm:text-4xl md:text-5xl lg:text-6xl"
       >
         {{ hero.title }}
       </h1>
 
-      <p class="mt-5 max-w-xl text-lg leading-8 text-[var(--color-text-muted)] md:text-xl">
+      <p class="mx-auto mt-5 max-w-[18rem] text-base leading-8 text-[var(--color-text-muted)] sm:max-w-2xl md:text-xl">
         {{ hero.description }}
       </p>
 
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
         <app-whatsapp-button
           [label]="hero.primaryCtaLabel"
           contextTag="entregas, coletas e contratos fixos"
@@ -29,15 +29,11 @@
         />
       </div>
 
-      <div class="mt-8 flex flex-wrap gap-3">
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
         @for (badge of hero.badges; track badge) {
           <app-trust-badge [label]="badge" />
         }
       </div>
-    </div>
-
-    <div appRevealOnView class="lg:justify-self-end">
-      <app-hero-visual />
     </div>
   </div>
 </section>

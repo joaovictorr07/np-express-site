@@ -12,5 +12,7 @@ export class FooterSectionComponent {
   protected readonly companyName = BUSINESS_CONFIG.companyName;
   protected readonly primaryPhone = BUSINESS_CONFIG.primaryPhoneDisplay;
   protected readonly phoneHref = BUSINESS_CONFIG.contactLinks.phone;
+  protected readonly whatsappHref = BUSINESS_CONFIG.contactLinks.whatsapp;
   protected readonly footerNote = LANDING_CONTENT.footer.note;
+  protected readonly navItems = LANDING_CONTENT.nav;
 }

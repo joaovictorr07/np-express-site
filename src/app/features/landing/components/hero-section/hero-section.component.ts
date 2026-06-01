@@ -5,19 +5,13 @@ import { TrustBadgeComponent } from '../../../../shared/components/trust-badge/t
 import { WhatsappButtonComponent } from '../../../../shared/components/whatsapp-button/whatsapp-button.component';
 import { RevealOnViewDirective } from '../../../../shared/directives/reveal-on-view/reveal-on-view.directive';
 import { LANDING_CONTENT } from '../../landing.content';
-import { HeroVisualComponent } from '../hero-visual/hero-visual.component';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [
-    CtaButtonComponent,
-    HeroVisualComponent,
-    RevealOnViewDirective,
-    TrustBadgeComponent,
-    WhatsappButtonComponent
-  ],
+  imports: [CtaButtonComponent, RevealOnViewDirective, TrustBadgeComponent, WhatsappButtonComponent],
   templateUrl: './hero-section.component.html',
+  styleUrl: './hero-section.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroSectionComponent {

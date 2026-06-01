@@ -3,15 +3,19 @@
     <div appRevealOnView>
       <app-section-header
         eyebrow="Benefícios"
-        title="Uma landing feita para transmitir confiança sem cara de panfleto"
-        description="A comunicação combina agilidade, organização e atendimento direto para aumentar a intenção de contato."
+        title="Mais controle para resolver entregas sem burocracia"
+        description="A solicitação fica simples: você informa a demanda, confirma as condições e acompanha a execução."
       />
     </div>
 
     <div class="mt-8 grid gap-5 md:mt-10 md:grid-cols-2 xl:grid-cols-3">
       @for (benefit of benefits; track benefit.title) {
         <div appRevealOnView>
-          <app-feature-card [title]="benefit.title" [description]="benefit.description" />
+          <app-feature-card
+            [title]="benefit.title"
+            [description]="benefit.description"
+            [icon]="benefit.icon"
+          />
         </div>
       }
     </div>

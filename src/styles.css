@@ -77,6 +77,10 @@ img {
   max-width: 100%;
 }
 
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
 .page-shell {
   position: relative;
   isolation: isolate;
@@ -115,7 +119,7 @@ img {
 
 .section-shell {
   margin-inline: auto;
-  width: min(100% - 2rem, 78rem);
+  width: min(100%, 78rem);
 }
 
 .surface-panel {

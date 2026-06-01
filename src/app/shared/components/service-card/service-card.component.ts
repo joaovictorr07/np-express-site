@@ -9,6 +9,7 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
 export class ServiceCardComponent {
   readonly title = input.required<string>();
   readonly description = input.required<string>();
+  readonly icon = input('contract');
   readonly index = input(1);
 
   protected readonly indexLabel = computed(() => String(this.index()).padStart(2, '0'));

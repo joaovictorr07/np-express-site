@@ -2,10 +2,48 @@
   class="surface-panel group h-full overflow-hidden p-6 transition-transform duration-300 hover:-translate-y-1 md:p-7"
 >
   <div class="mb-5 flex items-center justify-between gap-4">
-    <span
-      class="inline-flex rounded-full border border-[rgba(121,236,255,0.18)] bg-[rgba(121,236,255,0.08)] px-3 py-1 text-xs font-semibold tracking-[0.2em] text-[var(--color-brand-cyan)]"
-    >
-      {{ indexLabel() }}
+    <span class="inline-flex items-center gap-3">
+      <span
+        class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[rgba(121,236,255,0.16)] bg-linear-to-br from-[rgba(121,236,255,0.2)] to-[rgba(31,197,178,0.1)] text-[var(--color-brand-cyan)]"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2">
+          @switch (icon()) {
+            @case ('pickup') {
+              <path d="M4 7h10v10H4z" />
+              <path d="M14 11h3l3 3v3h-6z" />
+              <path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+              <path d="M17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+            }
+            @case ('calendar') {
+              <path d="M5 5h14v15H5z" />
+              <path d="M8 3v4M16 3v4M5 10h14" />
+            }
+            @case ('route') {
+              <path d="M6 18c4 0 4-12 8-12h4" />
+              <path d="M6 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+            }
+            @case ('speed') {
+              <path d="M5 16a7 7 0 1 1 14 0" />
+              <path d="m12 16 4-5" />
+              <path d="M8 20h8" />
+            }
+            @case ('urgent') {
+              <path d="M12 3 3 20h18z" />
+              <path d="M12 9v5M12 17h.01" />
+            }
+            @default {
+              <path d="M6 7h12v13H6z" />
+              <path d="M9 7V5h6v2M9 11h6M9 15h4" />
+            }
+          }
+        </svg>
+      </span>
+      <span
+        class="inline-flex rounded-full border border-[rgba(121,236,255,0.18)] bg-[rgba(121,236,255,0.08)] px-3 py-1 text-xs font-semibold tracking-[0.2em] text-[var(--color-brand-cyan)]"
+      >
+        {{ indexLabel() }}
+      </span>
     </span>
     <span class="h-px flex-1 bg-linear-to-r from-[rgba(121,236,255,0.22)] to-transparent"></span>
   </div>

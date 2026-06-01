@@ -3,7 +3,31 @@
     class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-[rgba(121,236,255,0.22)] to-[rgba(31,197,178,0.12)] text-[var(--color-brand-cyan)]"
     aria-hidden="true"
   >
-    <span class="h-2.5 w-2.5 rounded-full bg-current"></span>
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2">
+      @switch (icon()) {
+        @case ('contact') {
+          <path d="M5 6h14v10H8l-3 3z" />
+          <path d="M9 10h6M9 13h4" />
+        }
+        @case ('flexibility') {
+          <path d="M7 7h5a5 5 0 0 1 0 10H6" />
+          <path d="m9 4-3 3 3 3M15 14l3 3-3 3" />
+        }
+        @case ('routine') {
+          <path d="M5 5h14v15H5z" />
+          <path d="M8 3v4M16 3v4M8 12h3M8 16h6" />
+        }
+        @case ('contract') {
+          <path d="M6 7h12v13H6z" />
+          <path d="M9 7V5h6v2M9 11h6M9 15h4" />
+        }
+        @default {
+          <path d="M12 3v18" />
+          <path d="M5 8h14M7 16h10" />
+          <path d="M8 5h8a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3Z" />
+        }
+      }
+    </svg>
   </div>
   <h3 class="font-[var(--font-display)] text-xl font-semibold tracking-tight text-white">
     {{ title() }}
