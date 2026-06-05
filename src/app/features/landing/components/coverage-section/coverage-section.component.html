@@ -1,5 +1,7 @@
 <section [id]="sectionId" class="px-4 pt-16 md:px-6 md:pt-24">
-  <div class="section-shell surface-panel overflow-hidden px-6 py-8 md:px-8 md:py-10">
+  <div
+    class="section-shell surface-panel overflow-hidden border-white/8 bg-linear-to-br from-[rgba(14,17,26,0.98)] via-[rgba(11,13,20,0.96)] to-[rgba(17,20,31,0.92)] px-6 py-8 md:px-8 md:py-10"
+  >
     <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
       <div appRevealOnView>
         <app-section-header
@@ -15,14 +17,20 @@
         </div>
       </div>
 
-      <div appRevealOnView class="grid gap-4">
-        @for (bullet of coverage.bullets; track bullet) {
-          <div class="rounded-3xl border border-white/10 bg-black/18 px-5 py-4">
+      <div class="grid gap-4">
+        @for (bullet of coverage.bullets; track bullet; let index = $index) {
+          <div
+            appRevealOnView
+            [appRevealOnViewDelay]="index * 80"
+            class="rounded-3xl border border-white/10 bg-black/18 px-5 py-4 transition-transform duration-300 hover:-translate-y-0.5"
+          >
             <div class="flex items-start gap-3">
               <span
-                class="mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--color-brand-cyan)]"
-              ></span>
-              <p class="text-sm leading-7 text-[var(--color-text-primary)] md:text-base">
+                class="mt-0.5 inline-flex h-8 min-w-8 items-center justify-center rounded-full border border-[rgba(121,236,255,0.18)] bg-[rgba(121,236,255,0.08)] font-[var(--font-display)] text-[0.7rem] font-semibold tracking-[0.14em] text-[var(--color-brand-cyan)]"
+              >
+                0{{ index + 1 }}
+              </span>
+              <p class="pt-0.5 text-sm leading-7 text-[var(--color-text-primary)] md:text-base">
                 {{ bullet }}
               </p>
             </div>

@@ -4,7 +4,7 @@ function createWhatsappUrl(numberIntl: string, message: string, baseUrl: string)
   return `${baseUrl}?phone=${numberIntl}&text=${encodeURIComponent(message)}`;
 }
 
-const DEFAULT_MESSAGE = 'Olá! Quero solicitar um atendimento da NP Express.';
+const DEFAULT_MESSAGE = 'Olá! Quero solicitar uma coleta ou entrega com a NP Express.';
 const WHATSAPP_NUMBER = '5511912141367';
 const WHATSAPP_BASE_URL = 'https://wa.me/';
 
@@ -15,14 +15,14 @@ export const BUSINESS_CONFIG = {
   whatsappNumberIntl: WHATSAPP_NUMBER,
   defaultWhatsappMessage: DEFAULT_MESSAGE,
   whatsappBaseUrl: WHATSAPP_BASE_URL,
-  businessTagline: 'Motoboy ágil para entregas, coletas e contratos fixos.',
+  businessTagline: 'Coleta, entrega e urgência com resposta rápida.',
   serviceLabels: [
-    'Contrato fixo ou esporádico',
+    'Entregas rápidas',
     'Entregas e coletas',
+    'Entregas urgentes sob consulta',
     'Coleta programada',
     'Pequenas e longas distâncias',
-    'Entregas rápidas',
-    'Entregas urgentes sob consulta'
+    'Contrato fixo ou esporádico'
   ],
   contactLinks: {
     whatsapp: createWhatsappUrl(WHATSAPP_NUMBER, DEFAULT_MESSAGE, WHATSAPP_BASE_URL),
@@ -52,5 +52,5 @@ export function buildWhatsappLink(message: string = BUSINESS_CONFIG.defaultWhats
 }
 
 export function buildContextualWhatsappMessage(context: string): string {
-  return `Olá! Quero falar sobre ${context} na NP Express.`;
+  return `Olá! Quero falar com a NP Express sobre ${context}.`;
 }

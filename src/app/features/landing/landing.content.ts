@@ -17,6 +17,13 @@ export interface StepBlock {
   readonly description: string;
 }
 
+export interface SectionIntro {
+  readonly eyebrow: string;
+  readonly title: string;
+  readonly description: string;
+  readonly supportLine?: string;
+}
+
 export const LANDING_CONTENT = {
   nav: [
     { label: 'Serviços', href: `#${SECTION_IDS.services}` },
@@ -25,35 +32,47 @@ export const LANDING_CONTENT = {
     { label: 'Cobertura', href: `#${SECTION_IDS.coverage}` }
   ] as const satisfies readonly LandingNavItem[],
   hero: {
-    eyebrow: 'Motoboy rápido e direto',
-    title: 'Entregas, coletas e contratos fixos sem complicação',
+    eyebrow: 'Motoboy rápido para sua entrega',
+    title: 'Entrega, coleta e urgência com resposta rápida',
     description:
-      'A NP Express resolve entregas pontuais, coletas programadas e demandas recorrentes com alinhamento rápido pelo WhatsApp.',
-    primaryCtaLabel: 'Chamar no WhatsApp',
+      'Fale com a NP Express no WhatsApp e resolva coletas, entregas e demandas urgentes com atendimento direto.',
+    supportLine: 'Atendimento direto para coletas, entregas rápidas e demandas sob consulta.',
+    primaryCtaLabel: 'Chamar agora no WhatsApp',
     secondaryCtaLabel: 'Ver serviços',
     badges: [
-      'Contrato fixo ou esporádico',
-      'Coletas programadas',
-      'Atendimento direto pelo WhatsApp'
+      'Coleta e entrega rápida',
+      'Urgências sob consulta',
+      'Atendimento direto'
     ] as const
   },
+  servicesSection: {
+    eyebrow: 'Serviços',
+    title: 'Serviços para coleta, entrega e apoio recorrente',
+    description: 'Atendimento rápido para demandas avulsas, programadas e contratos fixos.'
+  } as const satisfies SectionIntro,
   services: [
     {
-      title: 'Contrato fixo ou esporádico',
+      title: 'Entregas rápidas',
       description:
-        'Apoio pontual ou recorrente para empresas que precisam de entregas e retiradas com previsibilidade.',
-      icon: 'contract'
+        'Prioridade para solicitações que pedem resposta rápida, retirada ágil e execução sem enrolação.',
+      icon: 'speed'
     },
     {
       title: 'Entregas e coletas',
       description:
-        'Retirada e entrega de documentos, produtos e pequenos volumes com comunicação simples do início ao fim.',
+        'Retirada e entrega de documentos, produtos e pequenos volumes com alinhamento direto do início ao fim.',
       icon: 'pickup'
+    },
+    {
+      title: 'Urgências sob consulta',
+      description:
+        'Demandas críticas avaliadas caso a caso para alinhar prazo, rota e melhor forma de atendimento.',
+      icon: 'urgent'
     },
     {
       title: 'Coleta programada',
       description:
-        'Agendamento de coletas para reduzir improvisos e manter a operação comercial em dia.',
+        'Agendamento de coletas para dar ritmo à operação e reduzir improvisos na rotina comercial.',
       icon: 'calendar'
     },
     {
@@ -63,33 +82,34 @@ export const LANDING_CONTENT = {
       icon: 'route'
     },
     {
-      title: 'Entregas rápidas',
+      title: 'Contrato fixo ou esporádico',
       description:
-        'Prioridade para demandas em que resposta rápida, clareza e execução fazem diferença.',
-      icon: 'speed'
-    },
-    {
-      title: 'Urgências sob consulta',
-      description:
-        'Demandas críticas avaliadas caso a caso para alinhar prazo, rota e melhor forma de atendimento.',
-      icon: 'urgent'
+        'Apoio pontual ou recorrente para empresas que precisam de entregas e retiradas com mais previsibilidade.',
+      icon: 'contract'
     }
   ] as const satisfies readonly ContentBlock[],
+  benefitsSection: {
+    eyebrow: 'Benefícios',
+    title: 'Mais agilidade, menos atrito',
+    description: 'Você chama, alinha e resolve sem burocracia.',
+    supportLine:
+      'Agilidade para demandas urgentes, previsibilidade para coletas recorrentes e contato direto quando a operação precisa andar.'
+  } as const satisfies SectionIntro,
   benefits: [
     {
-      title: 'Agilidade operacional',
+      title: 'Resposta rápida',
       description:
-        'A solicitação sai do WhatsApp direto para o alinhamento da coleta ou entrega, sem etapas desnecessárias.',
+        'A demanda sai do WhatsApp direto para o atendimento, sem etapas desnecessárias no caminho.',
       icon: 'operation'
     },
     {
-      title: 'Contato sem intermediários',
+      title: 'Contato direto',
       description:
         'Origem, destino, prazo e detalhes importantes são confirmados em uma conversa objetiva.',
       icon: 'contact'
     },
     {
-      title: 'Flexibilidade real',
+      title: 'Flexibilidade de atendimento',
       description:
         'Atendimento útil para empresas, profissionais autônomos e pessoas físicas com demandas pontuais ou recorrentes.',
       icon: 'flexibility'
@@ -101,12 +121,17 @@ export const LANDING_CONTENT = {
       icon: 'routine'
     },
     {
-      title: 'Apoio para demandas recorrentes',
+      title: 'Apoio recorrente',
       description:
         'Uma alternativa prática para quem precisa de motoboy com frequência e quer centralizar o contato.',
       icon: 'contract'
     }
   ] as const satisfies readonly ContentBlock[],
+  howItWorksSection: {
+    eyebrow: 'Como funciona',
+    title: 'Chame, alinhe e acompanhe',
+    description: 'Um fluxo simples para resolver sua entrega sem demora.'
+  } as const satisfies SectionIntro,
   howItWorks: [
     {
       step: '01',
@@ -115,7 +140,7 @@ export const LANDING_CONTENT = {
     },
     {
       step: '02',
-      title: 'Informe origem, destino e tipo de entrega',
+      title: 'Envie origem, destino e tipo de volume',
       description: 'Passe os dados principais para alinharmos prazo, rota e viabilidade.'
     },
     {
@@ -130,24 +155,26 @@ export const LANDING_CONTENT = {
     }
   ] as const satisfies readonly StepBlock[],
   coverage: {
-    eyebrow: 'Cobertura e flexibilidade',
-    title: 'Atendimento para entregas pontuais, recorrentes e urgências sob consulta',
+    eyebrow: 'Atendimento flexível',
+    title: 'Coletas, entregas recorrentes e urgências sob consulta',
     description:
-      'A NP Express ajusta o atendimento ao tipo de entrega, distância e prazo de cada solicitação.',
+      'Atendimento ajustado ao tipo da demanda, distância e prazo.',
     bullets: [
-      'Atendimento para empresas e pessoas físicas.',
-      'Coletas avulsas, recorrentes e contratos fixos.',
-      'WhatsApp como canal principal para orçamento e alinhamento.'
+      'Empresas e pessoas físicas.',
+      'Demandas avulsas, programadas e contratos fixos.',
+      'Orçamento e alinhamento direto no WhatsApp.'
     ] as const,
     badges: ['Pequenas distâncias', 'Longas distâncias', 'Urgências sob consulta'] as const
   },
   finalCta: {
-    title: 'Precisa de um motoboy agora?',
+    eyebrow: 'Contato direto',
+    title: 'Precisa resolver uma entrega agora?',
     description:
       'Fale com a NP Express e alinhe coleta, entrega ou contrato fixo pelo WhatsApp.',
-    label: 'Chamar no WhatsApp'
+    label: 'Chamar agora no WhatsApp',
+    supportLine: 'Atendimento comercial e sob demanda'
   },
   footer: {
-    note: 'Entregas, coletas e contratos fixos com comunicação direta e prazos combinados antes da execução.'
+    note: 'Coletas, entregas e rotas recorrentes com contato direto e prazo combinado.'
   }
 } as const;

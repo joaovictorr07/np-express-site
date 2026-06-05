@@ -1,24 +1,28 @@
 <section [id]="sectionId" class="px-4 pt-16 md:px-6 md:pt-24">
-  <div class="section-shell">
-    <div appRevealOnView>
-      <app-section-header
-        eyebrow="Serviços"
-        title="Soluções para entregas, coletas e demandas recorrentes"
-        description="Serviços para resolver deslocamentos com rapidez, clareza e combinação objetiva pelo WhatsApp."
-      />
-    </div>
+  <div
+    class="section-shell overflow-hidden rounded-[2rem] border border-white/8 bg-linear-to-br from-[rgba(16,19,29,0.92)] via-[rgba(9,11,18,0.98)] to-[rgba(16,19,29,0.92)] px-5 py-7 shadow-[var(--shadow-soft)] md:px-8 md:py-10 xl:px-10"
+  >
+    <div class="grid gap-10 xl:grid-cols-[0.82fr_1.18fr] xl:items-start">
+      <div appRevealOnView class="xl:sticky xl:top-24">
+        <app-section-header
+          [eyebrow]="section.eyebrow"
+          [title]="section.title"
+          [description]="section.description"
+        />
+      </div>
 
-    <div class="mt-8 grid gap-5 md:mt-10 md:grid-cols-2 xl:grid-cols-3">
-      @for (service of services; track service.title; let index = $index) {
-        <div appRevealOnView>
-          <app-service-card
-            [title]="service.title"
-            [description]="service.description"
-            [icon]="service.icon"
-            [index]="index + 1"
-          />
-        </div>
-      }
+      <div class="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
+        @for (service of services; track service.title; let index = $index) {
+          <div appRevealOnView [appRevealOnViewDelay]="index * 70">
+            <app-service-card
+              [title]="service.title"
+              [description]="service.description"
+              [icon]="service.icon"
+              [index]="index + 1"
+            />
+          </div>
+        }
+      </div>
     </div>
   </div>
 </section>

@@ -1,22 +1,26 @@
 <section [id]="sectionId" class="px-4 pt-8 md:px-6 md:pt-10">
-  <div class="section-shell hero-background surface-panel flex items-center px-6 py-14 md:px-10 md:py-20">
-    <div appRevealOnView class="mx-auto max-w-3xl text-center">
+  <div
+    class="section-shell hero-background surface-panel flex items-center px-5 py-12 md:px-10 md:py-[4.75rem] lg:px-14 lg:py-20"
+  >
+    <div appRevealOnView class="mx-auto max-w-4xl text-center">
       <span class="eyebrow">{{ hero.eyebrow }}</span>
 
       <h1
-        class="text-balance-pretty mx-auto mt-6 max-w-[18rem] font-[var(--font-display)] text-3xl font-semibold tracking-tight text-white sm:max-w-none sm:text-4xl md:text-5xl lg:text-6xl"
+        class="text-balance-pretty mx-auto mt-6 max-w-[11ch] font-[var(--font-display)] text-4xl font-bold tracking-[-0.04em] text-white sm:max-w-[12ch] sm:text-5xl md:text-6xl md:leading-[0.94] lg:text-[4.5rem]"
       >
         {{ hero.title }}
       </h1>
 
-      <p class="mx-auto mt-5 max-w-[18rem] text-base leading-8 text-[var(--color-text-muted)] sm:max-w-2xl md:text-xl">
+      <p
+        class="mx-auto mt-5 max-w-[18rem] text-[1rem] leading-7 text-[var(--color-text-secondary)] sm:max-w-2xl md:text-[1.2rem] md:leading-8"
+      >
         {{ hero.description }}
       </p>
 
       <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
         <app-whatsapp-button
           [label]="hero.primaryCtaLabel"
-          contextTag="entregas, coletas e contratos fixos"
+          contextTag="uma coleta, entrega ou urgência"
           size="lg"
           ariaLabel="Chamar a NP Express no WhatsApp"
         />
@@ -29,7 +33,11 @@
         />
       </div>
 
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <div class="mt-6 text-sm font-medium tracking-wide text-[var(--color-text-muted)]">
+        {{ hero.supportLine }}
+      </div>
+
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
         @for (badge of hero.badges; track badge) {
           <app-trust-badge [label]="badge" />
         }

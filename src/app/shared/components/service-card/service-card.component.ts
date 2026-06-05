@@ -13,4 +13,5 @@ export class ServiceCardComponent {
   readonly index = input(1);
 
   protected readonly indexLabel = computed(() => String(this.index()).padStart(2, '0'));
+  protected readonly isPriority = computed(() => this.index() <= 3);
 }

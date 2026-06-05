@@ -14,5 +14,6 @@ import { LANDING_CONTENT } from '../../landing.content';
 })
 export class ServicesSectionComponent {
   protected readonly sectionId = SECTION_IDS.services;
+  protected readonly section = LANDING_CONTENT.servicesSection;
   protected readonly services = LANDING_CONTENT.services;
 }

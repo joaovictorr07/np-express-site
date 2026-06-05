@@ -10,6 +10,7 @@
   --color-surface-strong: rgba(11, 13, 18, 0.92);
   --color-text-primary: #f6f7fb;
   --color-text-muted: #adb3c2;
+  --color-text-secondary: #c6ccda;
   --color-brand-red: #ff5b4d;
   --color-brand-red-deep: #d9382f;
   --color-brand-teal: #1fc5b2;
@@ -147,9 +148,9 @@ section[id] {
   border: 1px solid rgba(121, 236, 255, 0.16);
   background: rgba(121, 236, 255, 0.08);
   padding: 0.5rem 0.85rem;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-brand-cyan);
 }
@@ -176,11 +177,18 @@ section[id] {
   transition:
     opacity var(--duration-base) var(--ease-premium),
     transform var(--duration-base) var(--ease-premium);
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
 .reveal-on-view.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.priority-card {
+  background:
+    linear-gradient(135deg, rgba(121, 236, 255, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(17, 19, 28, 0.92), rgba(11, 13, 18, 0.98));
 }
 
 @media (prefers-reduced-motion: reduce) {

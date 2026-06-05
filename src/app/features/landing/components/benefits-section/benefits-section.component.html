@@ -1,23 +1,30 @@
 <section [id]="sectionId" class="px-4 pt-16 md:px-6 md:pt-24">
   <div class="section-shell">
-    <div appRevealOnView>
-      <app-section-header
-        eyebrow="Benefícios"
-        title="Mais controle para resolver entregas sem burocracia"
-        description="A solicitação fica simples: você informa a demanda, confirma as condições e acompanha a execução."
-      />
-    </div>
+    <div class="grid gap-10 xl:grid-cols-[0.78fr_1.22fr] xl:items-start">
+      <div appRevealOnView class="xl:sticky xl:top-24">
+        <app-section-header
+          [eyebrow]="section.eyebrow"
+          [title]="section.title"
+          [description]="section.description"
+        />
 
-    <div class="mt-8 grid gap-5 md:mt-10 md:grid-cols-2 xl:grid-cols-3">
-      @for (benefit of benefits; track benefit.title) {
-        <div appRevealOnView>
-          <app-feature-card
-            [title]="benefit.title"
-            [description]="benefit.description"
-            [icon]="benefit.icon"
-          />
+        <div class="mt-6 max-w-md rounded-[1.75rem] border border-white/8 bg-white/[0.035] p-5 text-sm leading-7 text-[var(--color-text-secondary)]">
+          {{ section.supportLine }}
         </div>
-      }
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        @for (benefit of benefits; track benefit.title; let index = $index) {
+          <div appRevealOnView [appRevealOnViewDelay]="index * 70">
+            <app-feature-card
+              [title]="benefit.title"
+              [description]="benefit.description"
+              [icon]="benefit.icon"
+              [index]="index + 1"
+            />
+          </div>
+        }
+      </div>
     </div>
   </div>
 </section>

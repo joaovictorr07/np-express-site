@@ -31,9 +31,9 @@ export class CtaButtonComponent {
     };
 
     const sizes: Record<ButtonSize, string> = {
-      sm: 'px-4 py-2 text-sm',
-      md: 'px-5 py-3 text-sm md:px-6 md:py-3.5',
-      lg: 'px-6 py-3.5 text-base md:px-7 md:py-4'
+      sm: 'min-h-10 px-4 py-2 text-sm',
+      md: 'min-h-11 px-5 py-3 text-sm md:px-6 md:py-3.5',
+      lg: 'min-h-12 px-6 py-3.5 text-base md:px-7 md:py-4'
     };
 
     return `${base} ${variants[this.variant()]} ${sizes[this.size()]}`;

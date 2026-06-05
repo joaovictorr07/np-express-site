@@ -10,4 +10,5 @@ export class FeatureCardComponent {
   readonly title = input.required<string>();
   readonly description = input.required<string>();
   readonly icon = input('operation');
+  readonly index = input(1);
 }

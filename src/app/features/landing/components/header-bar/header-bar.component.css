@@ -7,7 +7,7 @@
 }
 
 .header-panel {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(22px) saturate(130%);
 }
