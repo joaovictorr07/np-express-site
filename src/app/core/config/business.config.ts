@@ -7,13 +7,13 @@ function createWhatsappUrl(numberIntl: string, message: string, baseUrl: string)
 }
 
 const DEFAULT_MESSAGE = 'Olá! Quero solicitar uma coleta ou entrega com a NP Express.';
-const WHATSAPP_NUMBER = '5511912141367';
+const WHATSAPP_NUMBER = '5511916662730';
 const WHATSAPP_BASE_URL = 'https://wa.me/';
 
 export const BUSINESS_CONFIG = {
   companyName: 'NP Express',
-  primaryPhoneDisplay: '11 91214-1367',
-  displayPhones: ['11 91214-1367'],
+  primaryPhoneDisplay: '11 91666-2730',
+  displayPhones: ['11 91666-2730'],
   whatsappNumberIntl: WHATSAPP_NUMBER,
   defaultWhatsappMessage: DEFAULT_MESSAGE,
   whatsappBaseUrl: WHATSAPP_BASE_URL,
@@ -45,7 +45,7 @@ export const BUSINESS_CONFIG = {
   ],
   contactLinks: {
     whatsapp: createWhatsappUrl(WHATSAPP_NUMBER, DEFAULT_MESSAGE, WHATSAPP_BASE_URL),
-    phone: 'tel:+5511912141367',
+    phone: 'tel:+5511916662730',
     institutional: [
       {
         label: 'WhatsApp',
@@ -55,7 +55,7 @@ export const BUSINESS_CONFIG = {
       },
       {
         label: 'Ligar agora',
-        href: 'tel:+5511912141367',
+        href: 'tel:+5511916662730',
         ariaLabel: 'Ligar para o contato principal da NP Express'
       }
     ]
