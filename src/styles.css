@@ -34,6 +34,7 @@
 :root {
   color-scheme: dark;
   scroll-behavior: smooth;
+  --header-anchor-offset: 6.75rem;
 }
 
 html,
@@ -79,7 +80,11 @@ img {
 }
 
 section[id] {
-  scroll-margin-top: 6rem;
+  scroll-margin-top: var(--header-anchor-offset);
+}
+
+html {
+  scroll-padding-top: var(--header-anchor-offset);
 }
 
 .page-shell {
@@ -208,5 +213,11 @@ section[id] {
   .reveal-on-view {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-anchor-offset: 7.5rem;
   }
 }
