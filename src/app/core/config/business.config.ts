@@ -1,7 +1,9 @@
 import { BusinessConfig } from '../models/business-config.model';
 
 function createWhatsappUrl(numberIntl: string, message: string, baseUrl: string): string {
-  return `${baseUrl}?phone=${numberIntl}&text=${encodeURIComponent(message)}`;
+  const normalizedBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+
+  return `${normalizedBaseUrl}${numberIntl}?text=${encodeURIComponent(message)}`;
 }
 
 const DEFAULT_MESSAGE = 'Olá! Quero solicitar uma coleta ou entrega com a NP Express.';
