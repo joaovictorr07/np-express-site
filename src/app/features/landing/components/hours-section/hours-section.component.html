@@ -1,0 +1,53 @@
+<section [id]="sectionId" class="px-4 pt-16 md:px-6 md:pt-24">
+  <div
+    class="section-shell overflow-hidden rounded-[2rem] border border-white/8 bg-linear-to-br from-[rgba(17,19,28,0.94)] via-[rgba(10,12,18,0.98)] to-[rgba(14,17,26,0.94)] px-5 py-7 shadow-[var(--shadow-soft)] md:px-8 md:py-10 xl:px-10"
+  >
+    <div class="grid gap-10 xl:grid-cols-[0.84fr_1.16fr] xl:items-start">
+      <div appRevealOnView class="xl:sticky xl:top-24">
+        <app-section-header
+          [eyebrow]="section.eyebrow"
+          [title]="section.title"
+          [description]="section.description"
+        />
+
+        <div
+          class="mt-6 max-w-md rounded-[1.75rem] border border-white/8 bg-white/[0.035] p-5 text-sm leading-7 text-[var(--color-text-secondary)]"
+        >
+          {{ section.supportLine }}
+        </div>
+      </div>
+
+      <div class="grid gap-4">
+        @for (slot of businessHours; track slot.label; let index = $index) {
+          <article
+            appRevealOnView
+            [appRevealOnViewDelay]="index * 70"
+            class="rounded-[1.75rem] border border-white/10 bg-black/18 px-5 py-5 transition-transform duration-300 hover:-translate-y-0.5 md:px-6"
+          >
+            <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <div>
+                <p
+                  class="font-[var(--font-display)] text-lg font-semibold tracking-tight text-white md:text-xl"
+                >
+                  {{ slot.label }}
+                </p>
+
+                @if (slot.note) {
+                  <p class="mt-2 max-w-xl text-sm leading-7 text-[var(--color-text-secondary)]">
+                    {{ slot.note }}
+                  </p>
+                }
+              </div>
+
+              <div
+                class="inline-flex w-fit items-center rounded-full border border-[rgba(121,236,255,0.18)] bg-[rgba(121,236,255,0.08)] px-4 py-2 text-sm font-semibold tracking-[0.02em] text-[var(--color-brand-cyan)]"
+              >
+                {{ slot.hours }}
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

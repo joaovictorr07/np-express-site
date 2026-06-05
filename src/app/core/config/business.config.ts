@@ -26,6 +26,23 @@ export const BUSINESS_CONFIG = {
     'Pequenas e longas distâncias',
     'Contrato fixo ou esporádico'
   ],
+  businessHours: [
+    {
+      label: 'Segunda a sexta',
+      hours: '07h às 17h',
+      note: 'Coletas, entregas e alinhamentos comerciais no fluxo principal.'
+    },
+    {
+      label: 'Sábado',
+      hours: '07h às 13h',
+      note: 'Disponibilidade reduzida, com confirmação direta antes do envio.'
+    },
+    {
+      label: 'Domingos e feriados',
+      hours: 'Sob consulta',
+      note: 'Demandas urgentes dependem de validação prévia no WhatsApp.'
+    }
+  ],
   contactLinks: {
     whatsapp: createWhatsappUrl(WHATSAPP_NUMBER, DEFAULT_MESSAGE, WHATSAPP_BASE_URL),
     phone: 'tel:+5511912141367',

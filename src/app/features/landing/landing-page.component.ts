@@ -7,6 +7,7 @@ import { FooterSectionComponent } from './components/footer-section/footer-secti
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 import { HowItWorksSectionComponent } from './components/how-it-works-section/how-it-works-section.component';
+import { HoursSectionComponent } from './components/hours-section/hours-section.component';
 import { ServicesSectionComponent } from './components/services-section/services-section.component';
 
 @Component({
@@ -19,6 +20,7 @@ import { ServicesSectionComponent } from './components/services-section/services
     BenefitsSectionComponent,
     HowItWorksSectionComponent,
     CoverageSectionComponent,
+    HoursSectionComponent,
     FinalCtaSectionComponent,
     FooterSectionComponent,
     FloatingWhatsappButtonComponent

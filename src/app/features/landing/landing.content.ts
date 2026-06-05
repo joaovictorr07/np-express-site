@@ -29,7 +29,8 @@ export const LANDING_CONTENT = {
     { label: 'Serviços', href: `#${SECTION_IDS.services}` },
     { label: 'Benefícios', href: `#${SECTION_IDS.benefits}` },
     { label: 'Como funciona', href: `#${SECTION_IDS.howItWorks}` },
-    { label: 'Cobertura', href: `#${SECTION_IDS.coverage}` }
+    { label: 'Cobertura', href: `#${SECTION_IDS.coverage}` },
+    { label: 'Horário', href: `#${SECTION_IDS.hours}` }
   ] as const satisfies readonly LandingNavItem[],
   hero: {
     eyebrow: 'Motoboy rápido para sua entrega',
@@ -166,6 +167,14 @@ export const LANDING_CONTENT = {
     ] as const,
     badges: ['Pequenas distâncias', 'Longas distâncias', 'Urgências sob consulta'] as const
   },
+  hoursSection: {
+    eyebrow: 'Horário de atendimento',
+    title: 'Janelas claras para responder, alinhar e colocar a rota em andamento',
+    description:
+      'Consulte os períodos de atendimento e confirme pelo WhatsApp quando a demanda pedir coleta rápida ou urgência.',
+    supportLine:
+      'Quando a operação sai do padrão, a confirmação segue direta no WhatsApp.'
+  } as const satisfies SectionIntro,
   finalCta: {
     eyebrow: 'Contato direto',
     title: 'Precisa resolver uma entrega agora?',
