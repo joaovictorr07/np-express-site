@@ -5,18 +5,28 @@
   z-index: 50;
 }
 
-.surface-panel {
-  background: linear-gradient(180deg, rgba(14, 17, 24, 0.78), rgba(9, 12, 18, 0.92));
+.header-shell {
+  position: relative;
 }
 
-.header-shell {
-  transition: padding var(--duration-fast) var(--ease-premium);
+.header-bar {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(7, 9, 14, 0.94);
+  transition:
+    border-color var(--duration-fast) var(--ease-premium),
+    background var(--duration-fast) var(--ease-premium),
+    box-shadow var(--duration-fast) var(--ease-premium),
+    backdrop-filter var(--duration-fast) var(--ease-premium);
+}
+
+.header-content-shell {
+  margin-inline: auto;
+  width: min(100% - 1.5rem, 84rem);
 }
 
 .header-panel,
 .mobile-nav-panel {
-  border-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(22px) saturate(130%);
   transition:
     border-color var(--duration-fast) var(--ease-premium),
     background var(--duration-fast) var(--ease-premium),
@@ -27,14 +37,16 @@
 .header-panel {
   position: relative;
   z-index: 2;
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.24);
+  min-height: 4.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-.header-shell.is-scrolled .header-panel,
-.header-shell.is-menu-open .header-panel {
-  border-color: rgba(255, 255, 255, 0.14);
-  background: linear-gradient(180deg, rgba(12, 14, 21, 0.92), rgba(8, 10, 15, 0.98));
-  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.34);
+.header-shell.is-scrolled .header-bar,
+.header-shell.is-menu-open .header-bar {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(7, 9, 14, 0.62);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px) saturate(145%);
 }
 
 .brand-mark {
@@ -59,10 +71,19 @@
   backdrop-filter: blur(4px);
 }
 
+.header-menu-wrap {
+  position: relative;
+  z-index: 2;
+  padding-top: 0.4rem;
+}
+
 .mobile-nav-panel {
   position: relative;
   z-index: 2;
-  margin-top: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(12, 15, 22, 0.96), rgba(8, 10, 15, 0.98));
+  backdrop-filter: blur(26px) saturate(140%);
   padding: 1rem;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
   animation: mobileMenuReveal var(--duration-fast) var(--ease-premium);
@@ -86,8 +107,18 @@
   }
 }
 
+@media (min-width: 768px) {
+  .header-content-shell {
+    width: min(100% - 2.5rem, 88rem);
+  }
+
+  .header-panel {
+    min-height: 5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .header-shell,
+  .header-bar,
   .header-panel,
   .mobile-nav-panel {
     transition: none;

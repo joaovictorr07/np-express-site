@@ -1,5 +1,6 @@
 .landing-shell {
   position: relative;
+  padding-top: 0.5rem;
 }
 
 .landing-shell::before {

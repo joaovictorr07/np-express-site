@@ -1,147 +1,149 @@
-<header
-  class="header-shell px-3 pt-3 md:px-6 md:pt-4"
-  [class.is-menu-open]="menuOpen()"
-  [class.is-scrolled]="isScrolled()"
->
-  <div class="section-shell">
-    <div
-      class="surface-panel header-panel flex items-center justify-between gap-3 px-3 py-2.5 md:gap-6 md:px-5 md:py-3.5"
-    >
-      <a
-        href="#inicio"
-        class="focus-ring inline-flex min-w-0 items-center gap-3 rounded-[1.25rem] pr-2 transition-opacity duration-300 hover:opacity-95"
-        aria-label="Voltar ao topo da landing da NP Express"
+<header class="header-shell" [class.is-menu-open]="menuOpen()" [class.is-scrolled]="isScrolled()">
+  <div class="header-bar">
+    <div class="header-content-shell">
+      <div
+        class="header-panel flex items-center justify-between gap-3 px-4 py-3 md:gap-6 md:px-6 md:py-4"
       >
-        <span
-          class="brand-mark inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-[1rem] md:h-12 md:w-12"
-        >
-          <img
-            src="/images/brand/logo-v2.webp"
-            alt="Logo da NP Express"
-            width="1280"
-            height="1280"
-            loading="eager"
-            decoding="async"
-            class="h-full w-full object-contain"
-          />
-        </span>
-        <span
-          class="min-w-0 font-[var(--font-display)] text-[0.95rem] font-semibold tracking-[-0.02em] text-white sm:text-base md:text-lg"
-        >
-          {{ companyName }}
-        </span>
-      </a>
-
-      <nav class="hidden items-center gap-5 md:flex" aria-label="Navegação principal da landing">
-        @for (item of navItems; track item.href) {
-          <a
-            [href]="item.href"
-            class="focus-ring rounded-full px-1.5 py-1 text-sm font-semibold text-[var(--color-text-secondary)] transition-colors duration-300 hover:text-white"
-          >
-            {{ item.label }}
-          </a>
-        }
-      </nav>
-
-      <div class="flex items-center gap-2 md:gap-3">
         <a
-          [href]="whatsappHref"
-          class="focus-ring inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(37,211,102,0.25)] bg-[rgba(37,211,102,0.08)] text-[var(--color-wa-green)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[rgba(37,211,102,0.4)] hover:bg-[rgba(37,211,102,0.14)] md:h-11 md:w-auto md:gap-2 md:px-4"
-          aria-label="Abrir conversa da NP Express no WhatsApp"
-          target="_blank"
-          rel="noreferrer noopener"
+          href="#inicio"
+          class="focus-ring inline-flex min-w-0 items-center gap-3 rounded-[1.25rem] pr-2 transition-opacity duration-300 hover:opacity-95"
+          aria-label="Voltar ao topo da landing da NP Express"
         >
           <span
-            class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(37,211,102,0.18)]"
-            aria-hidden="true"
+            class="brand-mark inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-[1rem] md:h-12 md:w-12"
           >
-            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current">
-              <path
-                d="M19.05 4.94A9.86 9.86 0 0 0 12 2a9.94 9.94 0 0 0-8.64 14.86L2 22l5.3-1.35A9.94 9.94 0 0 0 12 22a10 10 0 0 0 10-9.99 9.92 9.92 0 0 0-2.95-7.07ZM12 20.2a8.14 8.14 0 0 1-4.15-1.13l-.3-.18-3.15.8.84-3.07-.2-.31A8.14 8.14 0 1 1 12 20.2Zm4.46-6.1c-.25-.13-1.47-.72-1.7-.8-.23-.08-.4-.13-.57.13-.17.25-.66.8-.8.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.1.25-.27.38-.4.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.57-1.36-.78-1.87-.21-.49-.42-.42-.57-.43l-.48-.01c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.08s.89 2.42 1.02 2.59c.13.17 1.75 2.67 4.24 3.74.59.26 1.06.42 1.42.54.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.18-.06-.08-.23-.12-.48-.25Z"
-              />
-            </svg>
+            <img
+              src="/images/brand/logo-v2.webp"
+              alt="Logo da NP Express"
+              width="1280"
+              height="1280"
+              loading="eager"
+              decoding="async"
+              class="h-full w-full object-contain"
+            />
           </span>
           <span
-            class="hidden text-sm font-semibold tracking-tight text-[var(--color-text-primary)] md:inline"
+            class="min-w-0 font-[var(--font-display)] text-[0.95rem] font-semibold tracking-[-0.02em] text-white sm:text-base md:text-lg"
           >
-            Atendimento
+            {{ companyName }}
           </span>
         </a>
 
-        <button
-          type="button"
-          class="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/6 text-[var(--color-text-primary)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/16 hover:bg-white/10 md:hidden"
-          [attr.aria-controls]="menuId"
-          [attr.aria-expanded]="menuOpen()"
-          [attr.aria-label]="menuButtonLabel()"
-          (click)="toggleMenu()"
-        >
-          <span class="sr-only">{{ menuButtonLabel() }}</span>
-
-          @if (menuOpen()) {
-            <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
-              <path
-                d="M6 6 18 18M18 6 6 18"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="1.8"
-              />
-            </svg>
-          } @else {
-            <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
-              <path
-                d="M4 7h16M4 12h16M4 17h16"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="1.8"
-              />
-            </svg>
-          }
-        </button>
-      </div>
-    </div>
-
-    @if (menuOpen()) {
-      <div class="header-backdrop md:hidden" (click)="closeMenu()" aria-hidden="true"></div>
-
-      <div [attr.id]="menuId" class="surface-panel mobile-nav-panel md:hidden">
-        <nav class="flex flex-col gap-1.5" aria-label="Navegação principal no mobile">
+        <nav class="hidden items-center gap-5 md:flex" aria-label="Navegação principal da landing">
           @for (item of navItems; track item.href) {
             <a
               [href]="item.href"
-              class="focus-ring rounded-[1rem] px-4 py-3 text-sm font-semibold text-[var(--color-text-secondary)] transition-colors duration-300 hover:bg-white/5 hover:text-white"
-              (click)="handleNavClick()"
+              class="focus-ring rounded-full px-1.5 py-1 text-sm font-semibold text-[var(--color-text-secondary)] transition-colors duration-300 hover:text-white"
             >
               {{ item.label }}
             </a>
           }
         </nav>
 
-        <div class="mobile-nav-divider"></div>
-
-        <a
-          [href]="whatsappHref"
-          class="focus-ring inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-[rgba(37,211,102,0.25)] bg-[rgba(37,211,102,0.08)] px-5 py-3 text-sm font-semibold tracking-tight text-[var(--color-text-primary)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[rgba(37,211,102,0.4)] hover:bg-[rgba(37,211,102,0.14)]"
-          aria-label="Abrir conversa da NP Express no WhatsApp pelo menu principal"
-          target="_blank"
-          rel="noreferrer noopener"
-          (click)="closeMenu()"
-        >
-          <span
-            class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(37,211,102,0.18)] text-[var(--color-wa-green)]"
-            aria-hidden="true"
+        <div class="flex items-center gap-2 md:gap-3">
+          <a
+            [href]="whatsappHref"
+            class="focus-ring inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(37,211,102,0.25)] bg-[rgba(37,211,102,0.08)] text-[var(--color-wa-green)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[rgba(37,211,102,0.4)] hover:bg-[rgba(37,211,102,0.14)] md:h-11 md:w-auto md:gap-2 md:px-4"
+            aria-label="Abrir conversa da NP Express no WhatsApp"
+            target="_blank"
+            rel="noreferrer noopener"
           >
-            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current">
-              <path
-                d="M19.05 4.94A9.86 9.86 0 0 0 12 2a9.94 9.94 0 0 0-8.64 14.86L2 22l5.3-1.35A9.94 9.94 0 0 0 12 22a10 10 0 0 0 10-9.99 9.92 9.92 0 0 0-2.95-7.07ZM12 20.2a8.14 8.14 0 0 1-4.15-1.13l-.3-.18-3.15.8.84-3.07-.2-.31A8.14 8.14 0 1 1 12 20.2Zm4.46-6.1c-.25-.13-1.47-.72-1.7-.8-.23-.08-.4-.13-.57.13-.17.25-.66.8-.8.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.1.25-.27.38-.4.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.57-1.36-.78-1.87-.21-.49-.42-.42-.57-.43l-.48-.01c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.08s.89 2.42 1.02 2.59c.13.17 1.75 2.67 4.24 3.74.59.26 1.06.42 1.42.54.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.18-.06-.08-.23-.12-.48-.25Z"
-              />
-            </svg>
-          </span>
-          <span>Chamar no WhatsApp</span>
-        </a>
+            <span
+              class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(37,211,102,0.18)]"
+              aria-hidden="true"
+            >
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+                <path
+                  d="M19.05 4.94A9.86 9.86 0 0 0 12 2a9.94 9.94 0 0 0-8.64 14.86L2 22l5.3-1.35A9.94 9.94 0 0 0 12 22a10 10 0 0 0 10-9.99 9.92 9.92 0 0 0-2.95-7.07ZM12 20.2a8.14 8.14 0 0 1-4.15-1.13l-.3-.18-3.15.8.84-3.07-.2-.31A8.14 8.14 0 1 1 12 20.2Zm4.46-6.1c-.25-.13-1.47-.72-1.7-.8-.23-.08-.4-.13-.57.13-.17.25-.66.8-.8.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.1.25-.27.38-.4.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.57-1.36-.78-1.87-.21-.49-.42-.42-.57-.43l-.48-.01c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.08s.89 2.42 1.02 2.59c.13.17 1.75 2.67 4.24 3.74.59.26 1.06.42 1.42.54.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.18-.06-.08-.23-.12-.48-.25Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="hidden text-sm font-semibold tracking-tight text-[var(--color-text-primary)] md:inline"
+            >
+              Atendimento
+            </span>
+          </a>
+
+          <button
+            type="button"
+            class="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/6 text-[var(--color-text-primary)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/16 hover:bg-white/10 md:hidden"
+            [attr.aria-controls]="menuId"
+            [attr.aria-expanded]="menuOpen()"
+            [attr.aria-label]="menuButtonLabel()"
+            (click)="toggleMenu()"
+          >
+            <span class="sr-only">{{ menuButtonLabel() }}</span>
+
+            @if (menuOpen()) {
+              <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
+                <path
+                  d="M6 6 18 18M18 6 6 18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="1.8"
+                />
+              </svg>
+            } @else {
+              <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
+                <path
+                  d="M4 7h16M4 12h16M4 17h16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="1.8"
+                />
+              </svg>
+            }
+          </button>
+        </div>
       </div>
-    }
+    </div>
   </div>
+
+  @if (menuOpen()) {
+    <div class="header-backdrop md:hidden" (click)="closeMenu()" aria-hidden="true"></div>
+
+    <div class="header-menu-wrap md:hidden">
+      <div class="header-content-shell">
+        <div [attr.id]="menuId" class="mobile-nav-panel">
+          <nav class="flex flex-col gap-1.5" aria-label="Navegação principal no mobile">
+            @for (item of navItems; track item.href) {
+              <a
+                [href]="item.href"
+                class="focus-ring rounded-[1rem] px-4 py-3 text-sm font-semibold text-[var(--color-text-secondary)] transition-colors duration-300 hover:bg-white/5 hover:text-white"
+                (click)="handleNavClick()"
+              >
+                {{ item.label }}
+              </a>
+            }
+          </nav>
+
+          <div class="mobile-nav-divider"></div>
+
+          <a
+            [href]="whatsappHref"
+            class="focus-ring inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-[rgba(37,211,102,0.25)] bg-[rgba(37,211,102,0.08)] px-5 py-3 text-sm font-semibold tracking-tight text-[var(--color-text-primary)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[rgba(37,211,102,0.4)] hover:bg-[rgba(37,211,102,0.14)]"
+            aria-label="Abrir conversa da NP Express no WhatsApp pelo menu principal"
+            target="_blank"
+            rel="noreferrer noopener"
+            (click)="closeMenu()"
+          >
+            <span
+              class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(37,211,102,0.18)] text-[var(--color-wa-green)]"
+              aria-hidden="true"
+            >
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+                <path
+                  d="M19.05 4.94A9.86 9.86 0 0 0 12 2a9.94 9.94 0 0 0-8.64 14.86L2 22l5.3-1.35A9.94 9.94 0 0 0 12 22a10 10 0 0 0 10-9.99 9.92 9.92 0 0 0-2.95-7.07ZM12 20.2a8.14 8.14 0 0 1-4.15-1.13l-.3-.18-3.15.8.84-3.07-.2-.31A8.14 8.14 0 1 1 12 20.2Zm4.46-6.1c-.25-.13-1.47-.72-1.7-.8-.23-.08-.4-.13-.57.13-.17.25-.66.8-.8.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.1.25-.27.38-.4.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.57-1.36-.78-1.87-.21-.49-.42-.42-.57-.43l-.48-.01c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.08s.89 2.42 1.02 2.59c.13.17 1.75 2.67 4.24 3.74.59.26 1.06.42 1.42.54.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.18-.06-.08-.23-.12-.48-.25Z"
+                />
+              </svg>
+            </span>
+            <span>Chamar no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  }
 </header>
