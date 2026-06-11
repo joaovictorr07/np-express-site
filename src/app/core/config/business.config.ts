@@ -46,6 +46,7 @@ export const BUSINESS_CONFIG = {
   contactLinks: {
     whatsapp: createWhatsappUrl(WHATSAPP_NUMBER, DEFAULT_MESSAGE, WHATSAPP_BASE_URL),
     phone: 'tel:+5511916662730',
+    instagram: 'https://www.instagram.com/express_np/',
     institutional: [
       {
         label: 'WhatsApp',
@@ -57,6 +58,12 @@ export const BUSINESS_CONFIG = {
         label: 'Ligar agora',
         href: 'tel:+5511916662730',
         ariaLabel: 'Ligar para o contato principal da NP Express'
+      },
+      {
+        label: 'Instagram',
+        href: 'https://www.instagram.com/express_np/',
+        ariaLabel: 'Seguir a NP Express no Instagram',
+        external: true
       }
     ]
   }

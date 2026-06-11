@@ -13,6 +13,7 @@ export class FooterSectionComponent {
   protected readonly primaryPhone = BUSINESS_CONFIG.primaryPhoneDisplay;
   protected readonly phoneHref = BUSINESS_CONFIG.contactLinks.phone;
   protected readonly whatsappHref = BUSINESS_CONFIG.contactLinks.whatsapp;
+  protected readonly instagramHref = BUSINESS_CONFIG.contactLinks.instagram;
   protected readonly footerNote = LANDING_CONTENT.footer.note;
   protected readonly navItems = LANDING_CONTENT.nav;
 }

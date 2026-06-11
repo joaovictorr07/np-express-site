@@ -19,6 +19,7 @@ export interface BusinessConfig {
   readonly contactLinks: {
     readonly whatsapp: string;
     readonly phone: string;
+    readonly instagram: string;
     readonly institutional: readonly CtaLink[];
   };
 }
