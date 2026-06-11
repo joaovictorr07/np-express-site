@@ -30,6 +30,10 @@ export class RevealOnViewDirective implements AfterViewInit, OnDestroy {
       this.renderer.setStyle(nativeElement, '--reveal-delay', `${delay}ms`);
     }
 
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       this.renderer.addClass(nativeElement, 'is-visible');
       return;
