@@ -33,7 +33,7 @@ export const LANDING_CONTENT = {
     { label: 'Horário', href: `#${SECTION_IDS.hours}` }
   ] as const satisfies readonly LandingNavItem[],
   hero: {
-    eyebrow: 'Motoboy rápido para sua entrega',
+    eyebrow: 'Motoboy rápido',
     title: 'Entrega, coleta e urgência com resposta rápida',
     description:
       'Fale com a NP Express no WhatsApp e resolva coletas, entregas e demandas urgentes com atendimento direto.',
