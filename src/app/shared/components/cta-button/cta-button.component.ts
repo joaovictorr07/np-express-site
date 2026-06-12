@@ -23,7 +23,7 @@ export class CtaButtonComponent {
 
     const variants: Record<ButtonVariant, string> = {
       primary:
-        'cta-glow bg-linear-to-r from-[var(--color-brand-red)] to-[#ff8b5b] text-slate-950 hover:-translate-y-0.5 hover:brightness-105',
+        'shimmer-btn cta-glow bg-linear-to-r from-[var(--color-brand-red)] to-[#ff8b5b] text-slate-950 hover:-translate-y-0.5 hover:brightness-105',
       secondary:
         'border border-white/12 bg-white/6 text-[var(--color-text-primary)] hover:-translate-y-0.5 hover:border-[var(--color-brand-cyan)] hover:bg-white/10',
       ghost:

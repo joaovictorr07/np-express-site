@@ -42,7 +42,7 @@ export class WhatsappButtonComponent {
 
     const variants: Record<WhatsappVariant, string> = {
       primary:
-        'wa-glow bg-linear-to-r from-[var(--color-brand-red)] to-[#ff8b5b] text-slate-950 hover:-translate-y-0.5 hover:brightness-105',
+        'shimmer-btn animate-pulse-glow-wa bg-linear-to-r from-[var(--color-brand-red)] to-[#ff8b5b] text-slate-950 hover:-translate-y-0.5 hover:brightness-105',
       secondary:
         'border border-[rgba(37,211,102,0.25)] bg-[rgba(37,211,102,0.08)] text-[var(--color-text-primary)] hover:-translate-y-0.5 hover:bg-[rgba(37,211,102,0.14)]',
       ghost:

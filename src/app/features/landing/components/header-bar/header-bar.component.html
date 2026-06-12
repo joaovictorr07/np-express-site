@@ -6,14 +6,14 @@
       >
         <a
           href="#inicio"
-          class="focus-ring inline-flex min-w-0 items-center gap-3 rounded-[1.25rem] pr-2 transition-opacity duration-300 hover:opacity-95"
+          class="focus-ring logo-zoom inline-flex min-w-0 items-center gap-3 rounded-[1.25rem] pr-2"
           aria-label="Voltar ao topo da landing da NP Express"
         >
           <span
             class="brand-mark inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-[1rem] md:h-12 md:w-12"
           >
             <img
-              src="/images/brand/logo-v2.webp"
+              src="/images/brand/logo-v3.webp"
               alt="Logo da NP Express"
               width="1280"
               height="1280"
@@ -41,7 +41,7 @@
           @for (item of navItems; track item.href) {
             <a
               [href]="item.href"
-              class="focus-ring rounded-full px-1.5 py-1 text-sm font-semibold text-[var(--color-text-secondary)] transition-colors duration-300 hover:text-white"
+              class="focus-ring nav-link-underline px-1.5 py-1 text-sm font-semibold text-[var(--color-text-secondary)] transition-colors duration-300 hover:text-white"
             >
               {{ item.label }}
             </a>
@@ -51,7 +51,7 @@
         <div class="flex items-center gap-2 md:gap-3">
           <a
             [href]="whatsappHref"
-            class="focus-ring inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(37,211,102,0.25)] bg-[rgba(37,211,102,0.08)] text-[var(--color-wa-green)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[rgba(37,211,102,0.4)] hover:bg-[rgba(37,211,102,0.14)] md:h-11 md:w-auto md:gap-2 md:px-4"
+            class="focus-ring hidden md:inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(37,211,102,0.25)] bg-[rgba(37,211,102,0.08)] text-[var(--color-wa-green)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[rgba(37,211,102,0.4)] hover:bg-[rgba(37,211,102,0.14)] md:h-11 md:w-auto md:gap-2 md:px-4"
             aria-label="Abrir conversa da NP Express no WhatsApp"
             target="_blank"
             rel="noreferrer noopener"
@@ -75,35 +75,19 @@
 
           <button
             type="button"
-            class="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/6 text-[var(--color-text-primary)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/16 hover:bg-white/10 md:hidden"
+            class="focus-ring hamburger-btn flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/6 text-white transition-all duration-300 hover:bg-white/10 md:hidden"
+            [class.is-open]="menuOpen()"
             [attr.aria-controls]="menuId"
             [attr.aria-expanded]="menuOpen()"
             [attr.aria-label]="menuButtonLabel()"
             (click)="toggleMenu()"
           >
             <span class="sr-only">{{ menuButtonLabel() }}</span>
-
-            @if (menuOpen()) {
-              <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
-                <path
-                  d="M6 6 18 18M18 6 6 18"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-width="1.8"
-                />
-              </svg>
-            } @else {
-              <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
-                <path
-                  d="M4 7h16M4 12h16M4 17h16"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-width="1.8"
-                />
-              </svg>
-            }
+            <div class="hamburger-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </button>
         </div>
       </div>
