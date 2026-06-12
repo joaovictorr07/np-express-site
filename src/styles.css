@@ -235,10 +235,18 @@ html {
 
 .logo-zoom {
   transition: transform var(--duration-base) var(--ease-premium);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 .logo-zoom:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) translate3d(0, 0, 0);
+}
+
+.logo-zoom img {
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .focus-ring:focus-visible {
