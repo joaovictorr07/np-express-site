@@ -85,14 +85,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#09090f" />
     <link rel="preload" href="/images/brand/logo-header-2-opt.webp" as="image" type="image/webp" fetchpriority="high" />
-    <link rel="preload" href="/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/sora-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/manrope-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/manrope-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/manrope-500.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
+    <div id="scroll-sentinel" style="position: absolute; top: 0; left: 0; height: 12px; width: 1px; pointer-events: none; opacity: 0; z-index: -1;"></div>
     <app-root></app-root>
   </body>
 </html>

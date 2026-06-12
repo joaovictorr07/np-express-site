@@ -47,12 +47,20 @@ export class HeaderBarComponent {
         return;
       }
 
-      const syncScrolledState = () => this.isScrolled.set(currentWindow.scrollY > 12);
-      const handleScroll = () => syncScrolledState();
-
-      currentWindow.addEventListener('scroll', handleScroll, { passive: true });
-      syncScrolledState();
-      this.destroyRef.onDestroy(() => currentWindow.removeEventListener('scroll', handleScroll));
+      const sentinel = this.document.getElementById('scroll-sentinel');
+      if (sentinel) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const entry = entries[0];
+            if (entry) {
+              this.isScrolled.set(!entry.isIntersecting);
+            }
+          },
+          { threshold: 0 }
+        );
+        observer.observe(sentinel);
+        this.destroyRef.onDestroy(() => observer.disconnect());
+      }
 
       const mediaQuery = currentWindow.matchMedia('(min-width: 768px)');
       const syncDesktopState = () => {
