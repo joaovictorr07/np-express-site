@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://npexpressentregas.com.br/sitemap.xml
+Sitemap: https://npexpressentrega.com.br/sitemap.xml
