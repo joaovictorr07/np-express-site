@@ -9,6 +9,8 @@ import { HeroSectionComponent } from './components/hero-section/hero-section.com
 import { HowItWorksSectionComponent } from './components/how-it-works-section/how-it-works-section.component';
 import { HoursSectionComponent } from './components/hours-section/hours-section.component';
 import { ServicesSectionComponent } from './components/services-section/services-section.component';
+import { RegionsSectionComponent } from './components/regions-section/regions-section.component';
+import { FaqSectionComponent } from './components/faq-section/faq-section.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -20,7 +22,9 @@ import { ServicesSectionComponent } from './components/services-section/services
     BenefitsSectionComponent,
     HowItWorksSectionComponent,
     CoverageSectionComponent,
+    RegionsSectionComponent,
     HoursSectionComponent,
+    FaqSectionComponent,
     FinalCtaSectionComponent,
     FooterSectionComponent,
     FloatingWhatsappButtonComponent

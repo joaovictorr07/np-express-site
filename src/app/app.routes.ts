@@ -5,7 +5,7 @@ export const routes: Routes = [
   {
     path: '',
     component: LandingPageComponent,
-    title: 'NP Express | Entregas e Coletas Rápidas em Jundiaí e Região'
+    title: 'Motoboy Jundiaí - Entregas e Coletas Rápidas | NP Express'
   },
   {
     path: '**',
