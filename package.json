@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && node scripts/normalize-static-routes.mjs",
+    "validate:seo": "node scripts/validate-seo.mjs",
+    "check:seo": "npm run build && npm run validate:seo",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

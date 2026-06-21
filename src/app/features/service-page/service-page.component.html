@@ -1,0 +1,130 @@
+<app-header-bar />
+
+<div class="page-shell">
+  <main class="pb-16 md:pb-24">
+    <section id="inicio" class="px-4 pt-12 md:px-6 md:pt-14 lg:pt-16">
+      <div class="section-shell surface-panel px-5 py-12 md:px-10 md:py-16 lg:px-14 lg:py-20">
+        <div appRevealOnView class="mx-auto max-w-4xl text-center">
+          <span class="eyebrow">{{ content.eyebrow }}</span>
+          <h1 class="text-balance-pretty mx-auto mt-6 max-w-[16ch] font-[var(--font-display)] text-4xl font-bold tracking-[-0.04em] text-white sm:text-5xl md:text-6xl md:leading-[1.1]">
+            {{ content.title }}
+          </h1>
+          <p class="mx-auto mt-5 max-w-3xl text-base leading-7 text-[var(--color-text-secondary)] md:text-xl md:leading-8">
+            {{ content.introduction }}
+          </p>
+          <div class="mt-8">
+            <app-whatsapp-button
+              label="Solicitar atendimento"
+              [contextTag]="content.ctaContext"
+              size="lg"
+              ariaLabel="Solicitar atendimento da NP Express pelo WhatsApp"
+            />
+          </div>
+          <div class="mt-7 flex flex-wrap justify-center gap-3">
+            @for (highlight of content.highlights; track highlight) {
+              <span class="rounded-full border border-white/10 bg-white/6 px-4 py-2 text-xs font-semibold text-[var(--color-text-primary)]">
+                {{ highlight }}
+              </span>
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="px-4 pt-16 md:px-6 md:pt-24">
+      <div class="section-shell">
+        <div appRevealOnView class="max-w-3xl">
+          <span class="eyebrow">Serviços</span>
+          <h2 class="mt-5 font-[var(--font-display)] text-3xl font-semibold tracking-tight text-white md:text-4xl">{{ content.serviceTitle }}</h2>
+          <p class="mt-4 text-base leading-7 text-[var(--color-text-secondary)] md:text-lg">{{ content.serviceDescription }}</p>
+        </div>
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          @for (service of content.services; track service.title; let index = $index) {
+            <article appRevealOnView [appRevealOnViewDelay]="index * 60" class="surface-panel card-glass-premium p-6 md:p-7">
+              <h3 class="font-[var(--font-display)] text-xl font-semibold text-white">{{ service.title }}</h3>
+              <p class="mt-3 text-sm leading-7 text-[var(--color-text-secondary)] md:text-base">{{ service.description }}</p>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="px-4 pt-16 md:px-6 md:pt-24">
+      <div class="section-shell surface-panel px-5 py-8 md:px-10 md:py-12">
+        <span class="eyebrow">Como funciona</span>
+        <h2 class="mt-5 font-[var(--font-display)] text-3xl font-semibold text-white md:text-4xl">{{ content.processTitle }}</h2>
+        <div class="mt-8 grid gap-4 lg:grid-cols-3">
+          @for (step of content.process; track step.title; let index = $index) {
+            <article class="rounded-[1.5rem] border border-white/10 bg-black/15 p-6">
+              <span class="text-sm font-bold text-[var(--color-brand-cyan)]">0{{ index + 1 }}</span>
+              <h3 class="mt-4 font-[var(--font-display)] text-lg font-semibold text-white">{{ step.title }}</h3>
+              <p class="mt-3 text-sm leading-7 text-[var(--color-text-secondary)]">{{ step.description }}</p>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="px-4 pt-16 md:px-6 md:pt-24">
+      <div class="section-shell grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <article class="surface-panel p-6 md:p-9">
+          <span class="eyebrow">Atendimento</span>
+          <h2 class="mt-5 font-[var(--font-display)] text-3xl font-semibold text-white">{{ content.audienceTitle }}</h2>
+          <p class="mt-4 text-base leading-8 text-[var(--color-text-secondary)]">{{ content.audienceDescription }}</p>
+        </article>
+        <aside class="rounded-[1.5rem] border border-[rgba(121,236,255,0.2)] bg-[rgba(121,236,255,0.06)] p-6 md:p-9">
+          <h2 class="font-[var(--font-display)] text-2xl font-semibold text-white">Outros serviços em Jundiaí</h2>
+          <p class="mt-3 text-sm leading-7 text-[var(--color-text-secondary)]">{{ relatedPage.description }}</p>
+          <a [href]="relatedPage.href" class="focus-ring mt-5 inline-flex rounded-full border border-[var(--color-brand-cyan)] px-5 py-3 text-sm font-semibold text-[var(--color-brand-cyan)] transition-colors hover:bg-white/5">
+            {{ relatedPage.label }}
+          </a>
+          <a href="/" class="focus-ring mt-3 block w-fit text-sm font-semibold text-white hover:text-[var(--color-brand-cyan)]">Conheça todos os serviços da NP Express</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="faq" class="px-4 pt-16 md:px-6 md:pt-24">
+      <div class="section-shell">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2 class="mt-5 font-[var(--font-display)] text-3xl font-semibold text-white md:text-4xl">Perguntas sobre {{ content.eyebrow.toLowerCase() }}</h2>
+        <div class="mt-8 grid gap-4">
+          @for (faq of content.faqs; track faq.question) {
+            <article class="rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-6">
+              <h3 class="font-[var(--font-display)] text-lg font-semibold text-white">{{ faq.question }}</h3>
+              <p class="mt-3 text-sm leading-7 text-[var(--color-text-secondary)] md:text-base">{{ faq.answer }}</p>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="horario-atendimento" class="px-4 pt-16 md:px-6 md:pt-24">
+      <div class="section-shell grid gap-4 md:grid-cols-3">
+        <article class="rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-6">
+          <h2 class="font-[var(--font-display)] text-xl font-semibold text-white">Segunda a sexta</h2>
+          <p class="mt-3 font-semibold text-[var(--color-brand-cyan)]">07h às 17h</p>
+        </article>
+        <article class="rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-6">
+          <h2 class="font-[var(--font-display)] text-xl font-semibold text-white">Sábado</h2>
+          <p class="mt-3 font-semibold text-[var(--color-brand-cyan)]">07h às 13h</p>
+        </article>
+        <article class="rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-6">
+          <h2 class="font-[var(--font-display)] text-xl font-semibold text-white">Domingos e feriados</h2>
+          <p class="mt-3 font-semibold text-[var(--color-brand-cyan)]">Sob consulta</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cobertura" class="px-4 pt-16 md:px-6 md:pt-24">
+      <div class="section-shell rounded-[2rem] border border-[rgba(255,91,77,0.2)] bg-linear-to-br from-[rgba(255,91,77,0.12)] to-[rgba(121,236,255,0.08)] p-6 text-center md:p-10">
+        <h2 class="font-[var(--font-display)] text-3xl font-semibold text-white">Atendimento em Jundiaí e cidades próximas</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-[var(--color-text-secondary)]">Consulte pelo WhatsApp a disponibilidade para Jundiaí, Várzea Paulista, Campo Limpo Paulista, Itupeva, Louveira, Cajamar, Cabreúva, Vinhedo e Valinhos.</p>
+        <div class="mt-7"><app-whatsapp-button label="Consultar disponibilidade" [contextTag]="content.ctaContext" size="lg" /></div>
+      </div>
+    </section>
+  </main>
+
+  <app-footer-section />
+</div>
+
+<app-floating-whatsapp-button />

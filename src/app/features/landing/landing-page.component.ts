@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { HOME_SEO } from '../../core/seo/seo-pages.config';
+import { SeoService } from '../../core/seo/seo.service';
 import { FloatingWhatsappButtonComponent } from '../../shared/components/floating-whatsapp-button/floating-whatsapp-button.component';
 import { BenefitsSectionComponent } from './components/benefits-section/benefits-section.component';
 import { CoverageSectionComponent } from './components/coverage-section/coverage-section.component';
@@ -33,4 +35,8 @@ import { FaqSectionComponent } from './components/faq-section/faq-section.compon
   styleUrl: './landing-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LandingPageComponent {}
+export class LandingPageComponent {
+  constructor(seo: SeoService) {
+    seo.apply(HOME_SEO);
+  }
+}
